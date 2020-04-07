@@ -1,16 +1,25 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from './services/user.service';
 import {PostService} from './services/post.service';
 import {TodosService} from './services/todos.service';
 
 class UserModel {
+  name: any;
+  id: any;
+  username: any;
+  website: any;
 }
 
 class PostModel {
+  id: any;
+  title: any;
+  body: any;
 }
 
 class TodosModel {
+  id: any;
+  title: any;
 }
 
 @Component({
@@ -24,6 +33,8 @@ class TodosModel {
     background: silver
   }`]
 })
+
+
 export class AppComponent {
   msg = 'users';
   users: UserModel[];
@@ -31,10 +42,34 @@ export class AppComponent {
   todos: TodosModel[];
 
   constructor(private userService: UserService, private postService: PostService, private todosService: TodosService) {
-    this.userService.getUsers().subscribe(value => this.users = value);
-    this.postService.getPosts().subscribe(value => this.posts = value);
-    this.todosService.getTodos().subscribe(value => this.todos = value);
+    // constructor(private userService: UserService, private postService: PostService, private todosService: TodosService) {
+//   this.userService.getUsers().subscribe(value => this.users = value);
+//   this.postService.getPosts().subscribe(value => this.posts = value);
+//   this.todosService.getTodos().subscribe(value => this.todos = value);
+// }
   }
 
+  ngOnInit(){
+    this.getAllUsers();
+    this.getAllPosts();
+    this.getAllTodos()
+  }
 
+  getAllUsers() {
+    this.userService.getUsers()
+      .subscribe(value =>  this.users = value);
+  }
+
+   getAllPosts() {
+    this.postService.getPosts()
+      .subscribe(value => this.posts = value);
+  }
+
+  getAllTodos() {
+    this.todosService.getTodos()
+      .subscribe(value => this.todos = value)
+  }
 }
+
+
+

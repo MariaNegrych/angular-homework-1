@@ -3,6 +3,9 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 class PostModel {
+  id: any;
+  title: any;
+  body: any;
 }
 
 @Injectable({

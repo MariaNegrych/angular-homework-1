@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 class TodosModel {
+  id: any;
+  title: any;
 }
 
 @Component({
@@ -12,6 +14,7 @@ export class TodosComponent{
 
   @Input()
   todo: TodosModel;
+  todos: any;
 
   constructor() {
   }

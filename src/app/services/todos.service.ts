@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 class TodosModel {
+  id: any;
+  title: any;
 }
 
 @Injectable({

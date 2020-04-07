@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 class PostModel {
+  id: any;
+  title: any;
+  body: any;
 }
 
 @Component({
@@ -12,6 +15,7 @@ export class PostComponent {
 
   @Input()
   post: PostModel;
+  posts: any;
 
   constructor() {
   }

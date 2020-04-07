@@ -3,6 +3,10 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 class UserModel {
+  name: any;
+  id: any;
+  username: any;
+  website: any;
 }
 
 @Injectable({
