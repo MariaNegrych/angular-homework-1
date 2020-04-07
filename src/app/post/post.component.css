@@ -1,0 +1,8 @@
+.post{
+  background: yellow;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  width: 400px;
+  justify-content: center;
+}
