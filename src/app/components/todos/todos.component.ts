@@ -14,7 +14,6 @@ export class TodosComponent{
 
   @Input()
   todo: TodosModel;
-  todos: any;
 
   constructor() {
   }

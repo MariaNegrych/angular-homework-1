@@ -16,7 +16,6 @@ export class UserComponent {
 
   @Input()
   user: UserModel;
-  users: any;
 
   constructor() {
   }

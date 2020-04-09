@@ -30,7 +30,7 @@ class TodosModel {
 
 
 export class AppComponent implements OnInit{
-  msg = 'users';
+  msg = 'to my Angular page';
   users: UserModel[];
   posts: PostModel[];
   todos: TodosModel[];

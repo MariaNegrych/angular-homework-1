@@ -15,7 +15,6 @@ export class PostComponent {
 
   @Input()
   post: PostModel;
-  posts: any;
 
   constructor() {
   }

@@ -5,6 +5,11 @@
     {{user.name}}
     {{user.username}}
     {{user.website}}
+    <div [ngClass]="'button'">
+      <button [ngClass]="'btn'">show details</button>
+    </div>
+
   </div>
 </div>
 
+<router-outlet></router-outlet>

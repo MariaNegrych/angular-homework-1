@@ -1,7 +1,14 @@
 .users{
   background: green;
   border: 2px solid black;
-  margin: 10px;
-  padding: 10px;
-  width: 200px;
+  margin: 50px;
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
 }
+.button{
+  text-align: right;
+}
+.btn{
+  padding: 10px;
+  cursor: pointer;}
