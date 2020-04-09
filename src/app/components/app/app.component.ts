@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {UserService} from './services/user.service';
-import {PostService} from './services/post.service';
-import {TodosService} from './services/todos.service';
+import {UserService} from '../../services/user/user.service';
+import {PostService} from '../../services/post/post.service';
+import {TodosService} from '../../services/todos/todos.service';
 
 class UserModel {
   name: any;
@@ -24,24 +24,20 @@ class TodosModel {
 
 @Component({
   selector: 'app-root',
-  template: `<h1>hello {{msg}}!</h1>
-  <app-user *ngFor="let u of users" [user]="u"></app-user>
-  <app-post *ngFor="let p of posts" [post]="p"></app-post>
-  <app-todos *ngFor="let t of todos" [todo]="t"></app-todos>
-  `,
-  styles: [`h1 {
-    background: silver
-  }`]
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   msg = 'users';
   users: UserModel[];
   posts: PostModel[];
   todos: TodosModel[];
 
-  constructor(private userService: UserService, private postService: PostService, private todosService: TodosService) {
+  constructor(private userService: UserService,
+              private postService: PostService,
+              private todosService: TodosService) {
     // constructor(private userService: UserService, private postService: PostService, private todosService: TodosService) {
 //   this.userService.getUsers().subscribe(value => this.users = value);
 //   this.postService.getPosts().subscribe(value => this.posts = value);
