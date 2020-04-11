@@ -2,13 +2,8 @@ import { Injectable } from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
 import {UserService} from '../user/user.service';
+import {UserModel} from '../../components/models/UserModel';
 
-class UserModel {
-  name: any;
-  id: any;
-  username: any;
-  website: any;
-}
 
 @Injectable({
   providedIn: 'root'

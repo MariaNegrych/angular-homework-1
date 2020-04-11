@@ -14,6 +14,9 @@ import { AllPostsComponent } from './components/all-posts/all-posts.component';
 import {PostResolverService} from './services/post-resolve/post-resolve.service';
 import { AllTodosComponent } from './components/all-todos/all-todos.component';
 import {TodosResolverService} from './services/todos-resolve/todos-resolve.service';
+import { AllCommentsComponent } from './components/all-comments/all-comments.component';
+import { CommentComponent } from './components/comment/comment.component';
+import {CommentResolverService} from './services/comment-resolve/comment-resolve.service';
 
 const routes: Routes = [
   // locahost:4200/ -> hello component
@@ -22,6 +25,8 @@ const routes: Routes = [
   {path: 'users', component: AllUsersComponent, resolve: {allUsers : UserResolverService}},
   // localhos:4200/posts ->all Posts Component
   {path: 'posts', component: AllPostsComponent, resolve: {allPosts : PostResolverService}},
+  // localhos:4200/comments ->all Comments Component
+  {path: 'comments', component: AllCommentsComponent, resolve: {allComments : CommentResolverService}},
   // localhos:4200/todos ->all Todos Component
   {path: 'todos', component: AllTodosComponent, resolve: {allTodos : TodosResolverService}},
 ];
@@ -35,7 +40,9 @@ const routes: Routes = [
     HelloComponent,
     AllUsersComponent,
     AllPostsComponent,
-    AllTodosComponent
+    AllTodosComponent,
+    AllCommentsComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

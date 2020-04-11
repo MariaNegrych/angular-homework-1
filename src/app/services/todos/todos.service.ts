@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {TodosModel} from '../../components/models/TodosModel';
 
-class TodosModel {
-  id: any;
-  title: any;
-}
 
 @Injectable({
   providedIn: 'root'

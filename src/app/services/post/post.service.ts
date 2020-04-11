@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-
-class PostModel {
-  id: any;
-  title: any;
-  body: any;
-}
+import {PostModel} from '../../components/models/PostModel';
 
 @Injectable({
   providedIn: 'root'

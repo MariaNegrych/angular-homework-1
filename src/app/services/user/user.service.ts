@@ -1,14 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {UserModel} from '../../components/models/UserModel';
 
-
-class UserModel {
-  name: any;
-  id: any;
-  username: any;
-  website: any;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -22,12 +16,12 @@ export class UserService {
     return this.http.get<UserModel[]>('https://jsonplaceholder.typicode.com/users');
   }
 
-  getUser(id: number) {
-    return this.http.get<UserModel[]>(`https://jsonplaceholder.typicode.com/users/${id}`);
-
-  }
-
-  getAuthUsers() {
-    return this.http.get<UserModel[]>(`https://jsonplaceholder.typicode.com/users`);
-  }
+  // getUser(id: number) {
+  //   return this.http.get<UserModel[]>(`https://jsonplaceholder.typicode.com/users/${id}`);
+  //
+  // }
+  //
+  // getAuthUsers() {
+  //   return this.http.get<UserModel[]>(`https://jsonplaceholder.typicode.com/users`);
+  // }
 }

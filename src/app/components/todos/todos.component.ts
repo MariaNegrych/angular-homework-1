@@ -1,9 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {TodosModel} from '../models/TodosModel';
 
-class TodosModel {
-  id: any;
-  title: any;
-}
 
 @Component({
   selector: 'app-todos',

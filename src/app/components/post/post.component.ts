@@ -1,10 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {PostModel} from '../models/PostModel';
 
-class PostModel {
-  id: any;
-  title: any;
-  body: any;
-}
 
 @Component({
   selector: 'app-post',

@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {PostModel} from '../models/PostModel';
 
-class PostModel {
-  id: any;
-  title: any;
-  body: any;
-}
 
 @Component({
   selector: 'app-all-posts',

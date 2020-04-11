@@ -1,11 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {UserModel} from '../models/UserModel';
 
-class UserModel {
-  name: any;
-  id: any;
-  username: any;
-  website: any;
-}
+
 
 @Component({
   selector: 'app-user',
