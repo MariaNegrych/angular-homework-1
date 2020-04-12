@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {TodosModel} from '../models/TodosModel';
 
-class TodosModel {
-  id: any;
-  title: any;
-}
 
 @Component({
   selector: 'app-all-todos',

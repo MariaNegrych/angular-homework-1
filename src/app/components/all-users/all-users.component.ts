@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {UserModel} from '../models/UserModel';
 
-class UserModel {
-  name: any;
-  id: any;
-  username: any;
-  website: any;
-}
 
 @Component({
   selector: 'app-all-users',

@@ -19,48 +19,14 @@ import {CommentService} from '../../services/comment/comment.service';
 
 export class AppComponent implements OnInit{
   msg = 'to my Angular page';
-  users: UserModel[];
-  posts: PostModel[];
-  todos: TodosModel[];
-  comments: CommentModel[];
 
-  constructor(private userService: UserService,
-              private postService: PostService,
-              private todosService: TodosService,
-              private commentService: CommentService) {
-    // constructor(private userService: UserService, private postService: PostService, private todosService: TodosService) {
-//   this.userService.getUsers().subscribe(value => this.users = value);
-//   this.postService.getPosts().subscribe(value => this.posts = value);
-//   this.todosService.getTodos().subscribe(value => this.todos = value);
-// }
+  constructor() {
+
   }
 
-  ngOnInit(){
-    this.getAllUsers();
-    this.getAllPosts();
-    this.getAllTodos();
-    this.getAllComments();
+  ngOnInit(): void {
   }
 
-  getAllUsers() {
-    this.userService.getUsers()
-      .subscribe(value =>  this.users = value);
-  }
-
-   getAllPosts() {
-    this.postService.getPosts()
-      .subscribe(value => this.posts = value);
-  }
-
-  getAllTodos() {
-    this.todosService.getTodos()
-      .subscribe(value => this.todos = value);
-  }
-
-  getAllComments() {
-    this.commentService.getComments()
-      .subscribe(value => this.comments = value);
-  }
 }
 
 
