@@ -1,10 +1,11 @@
 .users{
   background: green;
   border: 2px solid black;
-  margin: 50px;
+  margin: 20px;
   padding: 20px;
-  width: 600px;
-  margin: 0 auto;
+  width: 800px;
+  box-sizing: border-box;
+
 }
 .button{
   text-align: right;
