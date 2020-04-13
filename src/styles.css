@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+/*body{*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*}*/
+.items{
+  background: green;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  width: 800px;
+}
+.all-com{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }

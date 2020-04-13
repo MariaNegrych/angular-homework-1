@@ -17,6 +17,9 @@ import {TodosResolverService} from './services/todos-resolve/todos-resolve.servi
 import { AllCommentsComponent } from './components/all-comments/all-comments.component';
 import { CommentComponent } from './components/comment/comment.component';
 import {CommentResolverService} from './services/comment-resolve/comment-resolve.service';
+import { AllAlbumsComponent } from './components/all-albums/all-albums.component';
+import { AlbumComponent } from './components/album/album.component';
+import {AlbumResolverService} from './services/album-resolver/album-resolver.service';
 
 const routes: Routes = [
   // locahost:4200/ -> hello component
@@ -29,6 +32,7 @@ const routes: Routes = [
   {path: 'comments', component: AllCommentsComponent, resolve: {allComments : CommentResolverService}},
   // localhos:4200/todos ->all Todos Component
   {path: 'todos', component: AllTodosComponent, resolve: {allTodos : TodosResolverService}},
+  {path: 'albums', component: AllAlbumsComponent, resolve: {allAlbums: AlbumResolverService}}
 ];
 
 @NgModule({
@@ -42,7 +46,9 @@ const routes: Routes = [
     AllPostsComponent,
     AllTodosComponent,
     AllCommentsComponent,
-    CommentComponent
+    CommentComponent,
+    AllAlbumsComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,

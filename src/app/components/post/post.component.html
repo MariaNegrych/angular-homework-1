@@ -1,8 +1,15 @@
 <!--<app-post *ngFor="let p of posts" [post]="p"></app-post>-->
 
-<div [ngClass]="'post'">
+<div [ngClass]="'items'">
+  <p>
     {{post.id}}
+  </p>
+  <h3>
     {{post.title}}
+  </h3>
+  <p>
     {{post.body}}
+  </p>
+
 </div>
 
