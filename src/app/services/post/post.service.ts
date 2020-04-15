@@ -12,10 +12,13 @@ export class PostService {
 
   constructor(private http: HttpClient) {
   }
-  getPosts(id): Observable<PostModel[]> {
+  getPosts(): Observable<PostModel[]> {
     return this.http.get<PostModel[]>(this.API + 'posts');
   }
   getPostOfUser(id): Observable<PostModel[]>{
     return this.http.get<PostModel[]>(this.API + `posts?userId=${id}`);
+  }
+  getPostOfComment(postId): Observable<PostModel>{
+    return this.http.get<PostModel>(`https://jsonplaceholder.typicode.com/posts/${postId}`);
   }
 }

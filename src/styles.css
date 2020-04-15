@@ -10,10 +10,22 @@
   border-radius: 10px;
   margin: 20px;
   padding: 20px;
-  width: 800px;
+  width: 500px;
 }
-.all-com{
+
+.all{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: start;
+}
+
+a{
+  text-decoration: none;
+  background: white;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-right: 20px;
 }

@@ -10,7 +10,11 @@
   <p>
     {{comment.body}}
   </p>
-  <button><a [routerLink]="[comment.id,'post']" [queryParams]="{postId: comment.id}">Show post to this comment</a></button>
+
+    <a [routerLink]="[comment.id,'post']" [queryParams]="{postId: comment.postId}">
+      Show post to this comment
+    </a>
+
 </div>
 
 

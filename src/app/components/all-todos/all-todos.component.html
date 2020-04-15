@@ -1,3 +1,12 @@
-<div [ngClass]="'all-com'">
-<app-todos *ngFor="let t of todos" [todo]="t"></app-todos>
+
+<div [ngClass]="'all'">
+
+  <div [ngClass]="'all-com'">
+    <app-todos *ngFor="let t of todos" [todo]="t"></app-todos>
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
 </div>

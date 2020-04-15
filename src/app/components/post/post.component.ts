@@ -13,15 +13,16 @@ import {CommentService} from '../../services/comment/comment.service';
 export class PostComponent implements OnInit{
 
   @Input()
-  post: PostModel[];
+  post: PostModel;
 
   constructor(private activatedRoute: ActivatedRoute, private postService: PostService) {
 
-    this.activatedRoute.params
+    this.activatedRoute.queryParams
       .subscribe(value => {
-        if (!!value.id ) {
-          this.postService.getPosts(value.id).subscribe(value1 => {
+        if (!!value.postId) {
+          this.postService.getPostOfComment(value.postId).subscribe(value1 => {
             this.post = value1;
+            console.log(value);
           });
         }
       });

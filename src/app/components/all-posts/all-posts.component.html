@@ -1,6 +1,12 @@
-<router-outlet></router-outlet>
 
-<div [ngClass]="'all-com'">
-  <app-post *ngFor="let p of posts" [post]="p"></app-post>
+<div [ngClass]="'all'">
+
+  <div [ngClass]="'all-com'">
+    <app-post *ngFor="let p of posts" [post]="p"></app-post>
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
 </div>
-
