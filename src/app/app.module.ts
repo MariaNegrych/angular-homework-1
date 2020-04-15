@@ -20,17 +20,25 @@ import {CommentResolverService} from './services/comment-resolve/comment-resolve
 import { AllAlbumsComponent } from './components/all-albums/all-albums.component';
 import { AlbumComponent } from './components/album/album.component';
 import {AlbumResolverService} from './services/album-resolver/album-resolver.service';
+import {CommentsForPostResolverService} from './services/comments-for-post-resolver/comments-for-post-resolver.service';
+
 
 const routes: Routes = [
   // locahost:4200/ -> hello component
   {path: '', component: HelloComponent},
-  // localhos:4200/users ->all Users Component
-  {path: 'users', component: AllUsersComponent, resolve: {allUsers : UserResolverService}},
-  // localhos:4200/posts ->all Posts Component
-  {path: 'posts', component: AllPostsComponent, resolve: {allPosts : PostResolverService}},
-  // localhos:4200/comments ->all Comments Component
-  {path: 'comments', component: AllCommentsComponent, resolve: {allComments : CommentResolverService}},
-  // localhos:4200/todos ->all Todos Component
+  // localhost:4200/users ->all Users Component
+  {path: 'users', component: AllUsersComponent, resolve: {allUsers : UserResolverService}, children: [
+      {path: ':id/posts', component: AllPostsComponent}
+    ]},
+  // localhost:4200/posts ->all Posts Component
+  {path: 'posts', component: AllPostsComponent, resolve: {allPosts : PostResolverService}, children: [
+      {path: ':id/comments', component: AllCommentsComponent, resolve: {comments: CommentsForPostResolverService}}
+    ]},
+  // localhost:4200/comments ->all Comments Component
+  {path: 'comments', component: AllCommentsComponent, resolve: {allComments : CommentResolverService}, children: [
+      {path: ':id/post', component: PostComponent}
+    ]},
+  // localhost:4200/todos ->all Todos Component
   {path: 'todos', component: AllTodosComponent, resolve: {allTodos : TodosResolverService}},
   {path: 'albums', component: AllAlbumsComponent, resolve: {allAlbums: AlbumResolverService}}
 ];

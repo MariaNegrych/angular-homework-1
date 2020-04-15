@@ -8,9 +8,14 @@ import {PostModel} from '../../components/models/PostModel';
 })
 export class PostService {
 
+  API = 'https://jsonplaceholder.typicode.com/';
+
   constructor(private http: HttpClient) {
   }
-  getPosts(): Observable<PostModel[]> {
-    return this.http.get<PostModel[]>('https://jsonplaceholder.typicode.com/posts');
+  getPosts(id): Observable<PostModel[]> {
+    return this.http.get<PostModel[]>(this.API + 'posts');
+  }
+  getPostOfUser(id): Observable<PostModel[]>{
+    return this.http.get<PostModel[]>(this.API + `posts?userId=${id}`);
   }
 }
