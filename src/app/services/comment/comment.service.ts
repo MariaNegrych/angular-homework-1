@@ -8,9 +8,14 @@ import {HttpClient} from '@angular/common/http';
 })
 export class CommentService {
 
-  constructor(private http: HttpClient) {
+  API = 'https://jsonplaceholder.typicode.com/';
+
+  constructor(private httpClient: HttpClient) {
   }
   getComments(): Observable<CommentModel[]> {
-    return this.http.get<CommentModel[]>('https://jsonplaceholder.typicode.com/comments');
+    return this.httpClient.get<CommentModel[]>(this.API + 'comments');
+  }
+  getAllCommentsOfPost(id): Observable<CommentModel[]> {
+    return this.httpClient.get<CommentModel[]>(this.API + `comments?postId=${id}`);
   }
 }
