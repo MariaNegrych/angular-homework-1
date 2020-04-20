@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {CommentModel} from '../../../../models/CommentModel';
 import {CommentService} from '../../services/comment/comment.service';
+import {PostModel} from '../../../../models/PostModel';
+import {PostService} from '../../../post-module/services/post/post.service';
 
 @Component({
   selector: 'app-all-comments',
@@ -10,27 +12,26 @@ import {CommentService} from '../../services/comment/comment.service';
 })
 export class AllCommentsComponent implements OnInit {
 
+  @Input()
   comments: CommentModel[];
 
-  constructor(private activatedRoute: ActivatedRoute, private commentService: CommentService) {
-    console.log(!!this.activatedRoute.snapshot.params.postId);
-    if (this.activatedRoute.snapshot.params.postId) {
-      this.activatedRoute
-        .params
-        .subscribe(params =>
-          this.commentService
-            .getAllCommentsOfPost(params.postId)
-            .subscribe(commentsFromServer => this.comments = commentsFromServer));
-    } else {
-      this.activatedRoute.data.subscribe(value => {
-        console.log(value.allComments);
-        this.comments = value.allComments;
-      });
 
-    }
+  constructor(private commentService: CommentService, private activatedRoute: ActivatedRoute) {
+    // get from resolver
+      this.comments = this.activatedRoute.snapshot.data.allComments;
+
+// render post of user
+      this.activatedRoute.queryParams  // /users/:id/posts
+      .subscribe(value => {
+        if (!!value.id) {
+          this.commentService.getPostComments(value.id).subscribe(value1 => {this.comments = value1;
+          });
+        }
+      });
   }
 
   ngOnInit() {
   }
 
 }
+

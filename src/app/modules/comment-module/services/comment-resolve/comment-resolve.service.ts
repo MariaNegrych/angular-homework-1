@@ -13,6 +13,12 @@ export class CommentResolverService implements Resolve<CommentModel[]>{
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<CommentModel[]> {
-    return this.commentService.getComments();
+    const id = route.queryParamMap.get('postId');
+    console.log(id);
+    if (id) {
+      return this.commentService.getPostComments(+id);
+    } else {
+      return this.commentService.getAllComments();
+    }
   }
 }

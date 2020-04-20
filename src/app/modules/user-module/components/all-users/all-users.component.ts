@@ -11,6 +11,7 @@ import {UserModel} from '../../../../models/UserModel';
 export class AllUsersComponent implements OnInit {
 
   users: UserModel[];
+  xxx: any;
 
 
   constructor(private activatedRoute: ActivatedRoute) {
@@ -21,4 +22,9 @@ export class AllUsersComponent implements OnInit {
   ngOnInit() {
   }
 
+  catchUserData(user: any) {
+    console.log(user);
+    this.xxx = user;
+  }
 }
+

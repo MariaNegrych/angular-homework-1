@@ -16,12 +16,4 @@ export class UserService {
     return this.http.get<UserModel[]>('https://jsonplaceholder.typicode.com/users');
   }
 
-  // getUser(id: number) {
-  //   return this.http.get<UserModel[]>(`https://jsonplaceholder.typicode.com/users/${id}`);
-  //
-  // }
-  //
-  // getAuthUsers() {
-  //   return this.http.get<UserModel[]>(`https://jsonplaceholder.typicode.com/users`);
-  // }
 }

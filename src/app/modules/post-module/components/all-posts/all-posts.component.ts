@@ -9,40 +9,47 @@ import {PostService} from '../../services/post/post.service';
   templateUrl: './all-posts.component.html',
   styleUrls: ['./all-posts.component.css']
 })
+
 export class AllPostsComponent implements OnInit {
 
   posts: PostModel[];
-  post: PostModel;
+
+  constructor(
+    private postService: PostService,
+    private activatedRoute: ActivatedRoute,
+  ) {
 
 
-  constructor(private activatedRoute: ActivatedRoute, private postService: PostService) {
+    // this.activatedRoute
+    //   .params
+    //   .subscribe(params =>
+    //     this.postService
+    //       .getPostsOfUserById(params.id)
+    //       .subscribe(postsFromServer => {
+    //         if (postsFromServer.length) {
+    //           this.posts = postsFromServer;
+    //         }
+    //       }));
 
-    console.log(!!this.activatedRoute.snapshot.params.id);
+    this.activatedRoute.data.subscribe(value => {
+      this.posts = value.allPosts;
+    });
 
-    if (this.activatedRoute.snapshot.params.id) {
-      this.activatedRoute
-        .params
-        .subscribe(params =>
-          this.postService
-            .getPostOfUser(params.id)
-            .subscribe(postsFromServer => this.posts = postsFromServer));
-    } else if (this.activatedRoute.snapshot.params.postId) {
-      this.activatedRoute
-        .queryParams
-        .subscribe(params =>
-          this.postService
-            .getPostOfComment(params.postId)
-            .subscribe(post => this.post = post));
-    } else {
-      this.activatedRoute.data.subscribe(value => {
-        console.log(value.allPosts);
-        this.posts = value.allPosts;
-      });
 
-    }
+    //
+    // this.activatedRoute.queryParams.subscribe(queyParams =>
+    //   this.postService
+    //     .getPostsOfUserById(queyParams.idOfUser)
+    //     .subscribe(value => console.log(value))
+    // );
+    //
+    // this.postService
+    //   .getPostsOfUserById(this.router.getCurrentNavigation().extras.state.user.id)
+    //   .subscribe(value => console.log(value));
 
   }
 
   ngOnInit() {
   }
+
 }

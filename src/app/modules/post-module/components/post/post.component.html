@@ -1,17 +1,16 @@
-<!--<app-post *ngFor="let p of posts" [post]="p"></app-post>-->
 
 <div [ngClass]="'items'">
   <p>
-    {{post?.id}}
+    {{post.id}}
   </p>
   <h3>
-    {{post?.title}}
+    {{post.title}}
   </h3>
   <p>
-    {{post?.body}}
+    {{post.body}}
   </p>
-    <a [routerLink]="[post.id,'comments']" [queryParams]="{postId : post.id}">
-      Show comments to this post
-    </a>
+  <div [ngClass]="'button'">
+    <button [ngClass]="'btn'" (click)="navigate(post)">Show comments to this post</button>
+  </div>
 </div>
 

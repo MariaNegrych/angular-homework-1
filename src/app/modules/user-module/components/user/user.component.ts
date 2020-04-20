@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {UserModel} from '../../../../models/UserModel';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -14,13 +14,26 @@ export class UserComponent implements OnInit{
   @Input()
   user: UserModel;
 
+  @Output()
+  forwardUserData = new EventEmitter();
+
+
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
   }
-  navigate(user: UserModel){
-    this.router.navigate([user.id, 'posts'], {relativeTo: this.activatedRoute});
-  }
+  navigate(user: UserModel) {
 
+    this.forwardUserData.emit(user);
+
+    // users/1/posts?idOfUser=1
+    this.router.navigate([user.id, 'posts'],
+      {
+        state: {user},
+        queryParams: {idOfUser: user.id},
+        // users/:id/posts
+        relativeTo: this.activatedRoute
+      });
+  }
 }

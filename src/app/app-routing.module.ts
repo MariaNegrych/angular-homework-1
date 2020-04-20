@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {HelloComponent} from './hello/hello.component';
 
 
 const routes: Routes = [
-  // locahost:4200/ -> hello component
   {path: '', component: HelloComponent},
   {path: 'users', loadChildren: () => import('./modules/user-module/user.module').then(m => m.UserModule)},
   {path: 'posts', loadChildren: () => import('./modules/post-module/post-module.module').then(m => m.PostModuleModule)},
@@ -18,7 +17,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   exports: [
     RouterModule

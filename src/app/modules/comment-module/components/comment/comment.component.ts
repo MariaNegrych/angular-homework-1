@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CommentModel} from '../../../../models/CommentModel';
+import {PostModel} from '../../../../models/PostModel';
+import {PostService} from '../../../post-module/services/post/post.service';
 
 @Component({
   selector: 'app-comment',
@@ -10,10 +12,17 @@ export class CommentComponent implements OnInit {
 
   @Input()
   comment: CommentModel;
+  post: PostModel;
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(private postService: PostService) {
+
   }
 
-}
+  ngOnInit() {
+  }
+
+  showPostOfComment(comment: CommentModel) {
+    this.postService.getPost(comment.postId).subscribe(value => this.post = value);
+  }}
+
