@@ -1,0 +1,28 @@
+<div [appRed] [ngClass]="'divka'">{{title | uppercase}}</div>
+<div>{{'Pick a highlight color' | titlecase}}</div>
+<p>The time is {{today| date:'h:mm a z'}}</p>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+
+<button [appRed]="color" [ngClass]="'btn'">Click me!</button>
+
+<hr>
+
+<div *ngFor="let user of users | filter: 'name': 'maria' : 'age': '>': '20'">
+  {{user | json}}
+</div>
+<hr>
+<div *ngFor="let user of users | filter: 'age': '>': '23'">
+  {{user | json}}
+</div>
+<hr>
+<div *ngFor="let user of users | filter: 'car': 'Audi'">
+  {{user | json}}
+</div>
+
+<hr>
+
+<app-pipe></app-pipe>
