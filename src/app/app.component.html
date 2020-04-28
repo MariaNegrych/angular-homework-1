@@ -1,28 +1,23 @@
-<div [appRed] [ngClass]="'divka'">{{title | uppercase}}</div>
-<div>{{'Pick a highlight color' | titlecase}}</div>
-<p>The time is {{today| date:'h:mm a z'}}</p>
-<div>
-  <input type="radio" name="colors" (click)="color='lightgreen'">Green
-  <input type="radio" name="colors" (click)="color='yellow'">Yellow
-  <input type="radio" name="colors" (click)="color='cyan'">Cyan
-</div>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div [ngClass]="'form'">
+    <label>Id:</label> <input name="id" ngModel>
+  </div>
+  <div [ngClass]="'form'">
+    <label>Title: </label> <input name="title" ngModel>
+  </div>
+  <div [ngClass]="'form'">
+    <label>Body: </label><input name="body" ngModel>
+  </div>
+  <div [ngClass]="'form'">
+    <label>Type: </label> <input name="type" ngModel>
+  </div>
+  <div [ngClass]="'form'">
+    <button>Submit</button>
+  </div>
+</form>
 
-<button [appRed]="color" [ngClass]="'btn'">Click me!</button>
+<app-task *ngFor="let task of tasks" [task]="task"></app-task>
 
-<hr>
 
-<div *ngFor="let user of users | filter: 'name': 'maria' : 'age': '>': '20'">
-  {{user | json}}
-</div>
-<hr>
-<div *ngFor="let user of users | filter: 'age': '>': '23'">
-  {{user | json}}
-</div>
-<hr>
-<div *ngFor="let user of users | filter: 'car': 'Audi'">
-  {{user | json}}
-</div>
 
-<hr>
 
-<app-pipe></app-pipe>
