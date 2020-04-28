@@ -1,21 +1,33 @@
-<form [formGroup]="f">
-  <div [ngClass]="'form'">
-    <label>Id:</label> <input formControlName="id">
+
+<form [formGroup]="f" [style]="'background: green'" class="form-control">
+  <div [ngClass]="'form'" [ngStyle]="{'font-size':'20px', 'font-family':'Verdana'}">
+    <label>Id:</label>
+    <div>
+      <input formControlName="id" size="60" required>
+    </div>
   </div>
   <div [ngClass]="'form'">
-    <label>Title: </label> <input formControlName="title">
+    <label>Title: </label>
+    <div>
+      <input formControlName="title" size="60" required>
+    </div>
   </div>
   <div [ngClass]="'form'">
-    <label>Body: </label><input formControlName="body">
+    <label>Body: </label>
+    <div>
+      <input formControlName="body" size="60" required>
+    </div>
   </div>
   <div [ngClass]="'form'">
-    <label>Type: </label> <input formControlName="type">
+    <label>Type: </label>
+    <div>
+      <input formControlName="type" size="60" required>
+    </div>
   </div>
   <div [ngClass]="'form'">
-    <button (click)="onSubmit(f)">Submit</button>
+    <button  (click)="onSubmit(f)" [disabled]="f.invalid && (f.dirty || f.touched)">Submit</button>
   </div>
 </form>
-
 
 <app-task *ngFor="let task of tasks" [task]="task"></app-task>
 

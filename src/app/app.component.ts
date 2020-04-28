@@ -31,8 +31,10 @@ export class AppComponent implements OnInit{
 
   onSubmit(f: FormGroup) {
     console.log(f.value);
+    console.log(f);
     this.tasks.push(f.value);
     console.log(this.tasks);
+    f.reset(undefined);
   }
 
   // onReset(f: NgForm) {
