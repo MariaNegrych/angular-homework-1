@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 
 
 @Component({
@@ -13,12 +13,23 @@ export class AppComponent implements OnInit{
   // @Input()
   // tasks: TaskModel[];
 
+  f: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.f = formBuilder.group({
+      id: '',
+      title: '',
+      body: '',
+      type: ''
+    });
+  }
+
   tasks = [];
 
   ngOnInit(): void {
   }
 
-  onSubmit(f: NgForm) {
+  onSubmit(f: FormGroup) {
     console.log(f.value);
     this.tasks.push(f.value);
     console.log(this.tasks);

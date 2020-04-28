@@ -1,20 +1,21 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+<form [formGroup]="f">
   <div [ngClass]="'form'">
-    <label>Id:</label> <input name="id" ngModel>
+    <label>Id:</label> <input formControlName="id">
   </div>
   <div [ngClass]="'form'">
-    <label>Title: </label> <input name="title" ngModel>
+    <label>Title: </label> <input formControlName="title">
   </div>
   <div [ngClass]="'form'">
-    <label>Body: </label><input name="body" ngModel>
+    <label>Body: </label><input formControlName="body">
   </div>
   <div [ngClass]="'form'">
-    <label>Type: </label> <input name="type" ngModel>
+    <label>Type: </label> <input formControlName="type">
   </div>
   <div [ngClass]="'form'">
-    <button>Submit</button>
+    <button (click)="onSubmit(f)">Submit</button>
   </div>
 </form>
+
 
 <app-task *ngFor="let task of tasks" [task]="task"></app-task>
 
