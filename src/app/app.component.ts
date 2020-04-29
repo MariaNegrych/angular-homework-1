@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
+import {TaskModel} from '../model';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit{
     });
   }
 
-  tasks = [];
+  tasks: TaskModel[] = [];
 
   ngOnInit(): void {
   }
