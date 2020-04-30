@@ -1,0 +1,16 @@
+
+<div [ngClass]="'items'">
+  <p>
+    {{post.id}}
+  </p>
+  <h3>
+    {{post.title}}
+  </h3>
+  <p>
+    {{post.body}}
+  </p>
+  <div [ngClass]="'button'">
+    <button [ngClass]="'btn'" (click)="navigate(post)">Show comments to this post</button>
+  </div>
+</div>
+

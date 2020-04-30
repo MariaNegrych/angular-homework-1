@@ -1,0 +1,9 @@
+<div [ngClass]="'items'">
+  {{user.id}}
+  {{user.name}}
+    <div [ngClass]="'button'">
+      <button [ngClass]="'btn'" (click)="navigate(user)">Show posts for this user</button>
+    </div>
+</div>
+
+

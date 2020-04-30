@@ -1,0 +1,14 @@
+<div [ngClass]="'hello'">
+  <form [formGroup]="f" [style]="'background: green'" >
+    <div [ngClass]="'label'">
+      <label>Please, enter id of user</label>
+      <div>
+        <input formControlName="id" size="60" required>
+      </div>
+    <div [ngClass]="'form'">
+      <button (click)="onSearch(f)">Show user detail</button>
+    </div>
+    </div>
+  </form>
+</div>
+<router-outlet></router-outlet>

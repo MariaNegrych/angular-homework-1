@@ -1,0 +1,21 @@
+
+<div [ngClass]="'all'">
+
+  <div [ngClass]="'all-com'">
+    <div>
+      {{xxx?.id}}
+      {{xxx?.name}}
+      {{xxx?.email}}
+      {{xxx?.address.city}}
+      {{xxx?.address.geo.lat}}
+      {{xxx?.address.geo.lng}}
+    </div>
+
+    <app-user *ngFor="let su of users" [user]="su" (forwardUserData)="catchUserData($event)"></app-user>
+  </div>
+
+  <div [ngClass]="'post-of-user'">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
