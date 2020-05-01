@@ -23,9 +23,10 @@ export class HelloComponent implements OnInit {
   onSearch(f: FormGroup) {
     const {id} = this.f.value;
 
-    this.router.navigate(['info', id],{
-      relativeTo: this.activatedRoute
-    });
-    f.reset(undefined);
+    // this.router.navigate(['info', id],{
+    //   relativeTo: this.activatedRoute
+    // });
+    this.router.navigate(['info', id]);
+    // f.reset(undefined);
   }
 }
