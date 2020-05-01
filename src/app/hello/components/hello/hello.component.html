@@ -1,13 +1,19 @@
 <div [ngClass]="'hello'">
   <form [formGroup]="f" [style]="'background: green'" >
     <div [ngClass]="'label'">
-      <label>Please, enter id of user</label>
-      <div>
-        <input formControlName="id" size="60" required>
+
+      <div [ngClass]="'text'">
+        <label>Please, enter id of user</label>
       </div>
+
+      <div>
+        <input formControlName="id" size="40" required>
+      </div>
+
     <div [ngClass]="'form'">
-      <button (click)="onSearch(f)">Show user detail</button>
+      <button (click)="onSearch(f)" [ngClass]="'btn'">Show user detail</button>
     </div>
+
     </div>
   </form>
 </div>

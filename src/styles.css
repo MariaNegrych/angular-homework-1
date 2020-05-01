@@ -29,3 +29,14 @@ a{
   font-size: 14px;
   margin-right: 20px;
 }
+.btn{
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid darkgreen;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+.button{
+  padding: 10px;
+  text-align: center;
+}

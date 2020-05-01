@@ -1,8 +1,9 @@
-<div [ngClass]="'items'">
+<div [ngClass]="'user'">
 <!--  {{user | json}}-->
-  {{user.id}}.
-  {{user.name}}
-  {{user.username}}
-  {{user.website}}
-
+  <div [ngClass]="'user-item'">
+    {{user.id}}.
+    {{user.name}}
+    {{user.username}}
+    {{user.website}}
+  </div>
 </div>

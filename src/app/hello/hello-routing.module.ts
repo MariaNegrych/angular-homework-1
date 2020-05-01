@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HelloComponent} from './hello/hello.component';
-import {UserInfoComponent} from '../../modules/user-module/components/user-info/user-info.component';
-import {InfoResolverService} from '../../modules/user-module/services/user-info-service/info.resolver.service';
+import {HelloComponent} from './components/hello/hello.component';
+import {UserInfoComponent} from '../modules/user-module/components/user-info/user-info.component';
+import {InfoResolverService} from '../modules/user-module/services/user-info-service/info.resolver.service';
 import {CanActivateService} from './services/can-activate.service';
+import {UserResolverService} from '../modules/user-module/services/user-resolve/user-resolve.service';
 
 
 

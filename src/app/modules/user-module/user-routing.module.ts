@@ -4,7 +4,7 @@ import {AllUsersComponent} from './components/all-users/all-users.component';
 import {UserResolverService} from './services/user-resolve/user-resolve.service';
 import {UserInfoComponent} from './components/user-info/user-info.component';
 import {InfoResolverService} from './services/user-info-service/info.resolver.service';
-import {CanActivateService} from '../../hello/components/services/can-activate.service';
+import {CanActivateService} from '../../hello/services/can-activate.service';
 
 
 const routes: Routes = [

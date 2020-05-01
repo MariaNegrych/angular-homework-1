@@ -4,11 +4,11 @@ import {RouterModule, Routes} from '@angular/router';
 import {HelloComponent} from './hello/components/hello/hello.component';
 import {UserInfoComponent} from './modules/user-module/components/user-info/user-info.component';
 import {InfoResolverService} from './modules/user-module/services/user-info-service/info.resolver.service';
-import {CanActivateService} from './hello/components/services/can-activate.service';
+import {CanActivateService} from './hello/services/can-activate.service';
 
 
 const routes: Routes = [
-  {path: '', loadChildren: () => import('./hello/components/hello.module').then(m => m.HelloModule)},
+  {path: '', loadChildren: () => import('./hello/hello.module').then(m => m.HelloModule)},
   // {path: '', component: HelloComponent, children: [
   //   {path: 'info/:id',
   //     component: UserInfoComponent,

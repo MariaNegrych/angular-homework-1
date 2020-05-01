@@ -14,6 +14,6 @@ export class UserResolverService implements Resolve<UserModel[]> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<UserModel[]> {
-    return this.userService.getUsers();
+      return this.userService.getUsers();
   }
 }
