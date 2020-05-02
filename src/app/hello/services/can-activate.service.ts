@@ -15,10 +15,10 @@ export class CanActivateService implements CanActivate{
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const {id} = route.params;
 
-    if (id <= 10) {
+    if (id <= 10 && id > 0) {
       this.dataService.addState(id);
     } else { alert('This page is not found!'); }
 
-    return id <= 10;
+    return (id <= 10 && id > 0);
   }
 }
