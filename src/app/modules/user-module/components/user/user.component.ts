@@ -27,13 +27,13 @@ export class UserComponent implements OnInit{
 
     this.forwardUserData.emit(user);
 
-    // users/1/posts?idOfUser=1
+    // users/1/posts?userId=1
     this.router.navigate([user.id, 'posts'],
       {
         state: {user},
-        queryParams: {idOfUser: user.id},
-        // users/:id/posts
+        queryParams: {userId: user.id},
+        // users/1/posts
         relativeTo: this.activatedRoute
-      });
+      })
   }
 }

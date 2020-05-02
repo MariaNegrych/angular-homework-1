@@ -8,12 +8,13 @@ import {TodosModel} from '../../../../models/TodosModel';
 @Injectable({
   providedIn: 'root'
 })
-export class TodosResolverService implements Resolve<TodosModel[]> {
+
+export class TodosResolverService implements Resolve<TodosModel[]>{
 
   constructor(private todosService: TodosService) {
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<TodosModel[]> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<TodosModel[]> | Promise<TodosModel[]> | TodosModel[] {
     return this.todosService.getTodos();
   }
 }

@@ -8,7 +8,7 @@ import {CanActivateService} from '../../hello/services/can-activate.service';
 
 
 const routes: Routes = [
-  {path: '', component: AllUsersComponent, resolve: {allUsers: UserResolverService}, children: [
+  {path: '', component: AllUsersComponent, resolve: {users: UserResolverService}, children: [
       {path: ':id', loadChildren: () => import('../post-module/post-module.module').then(m => m.PostModuleModule)}
     ]},
   // {path: 'info/:id',

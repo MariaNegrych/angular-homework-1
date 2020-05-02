@@ -8,9 +8,9 @@ import {AlbumModel} from '../../../../models/AlbumModel';
 })
 export class AlbumService {
 
-  constructor(private http: HttpClient) { }
-
-  getAlbums(): Observable<AlbumModel[]>{
-    return this.http.get<AlbumModel[]>(`https://jsonplaceholder.typicode.com/albums`)
+  constructor(private httpClient: HttpClient) {
   }
+  getAlbums(): Observable<AlbumModel[]>{
+    return this.httpClient.get<AlbumModel[]>(`https://jsonplaceholder.typicode.com/albums`)
+}
 }

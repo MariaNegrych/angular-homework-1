@@ -7,12 +7,13 @@ import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AlbumResolverService implements Resolve<AlbumModel[]>{
 
   constructor(private albumService: AlbumService) {
   }
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<AlbumModel[]> | Promise<AlbumModel[]> | AlbumModel[] {
-    return this.albumService.getAlbums()
-  }
 
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<AlbumModel[]> | Promise<AlbumModel[]> | AlbumModel[] {
+    return this.albumService.getAlbums();
+  }
 }

@@ -17,8 +17,8 @@ export class UserService {
     return this.http.get<UserModel[]>('https://jsonplaceholder.typicode.com/users');
   }
 
-  getUser(id: Params): Observable<UserModel>{
-    return this.http.get<UserModel>(`http://jsonplaceholder.typicode.com/users/${id}`);
-  }
+  // getUser(id: Params): Observable<UserModel>{
+  //   return this.http.get<UserModel>(`http://jsonplaceholder.typicode.com/users/${id}`);
+  // }
 
 }
